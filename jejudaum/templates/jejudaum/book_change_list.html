@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+
+
+{% block content %}
+<h1>111</h1>
+
+<ul>
+    {% for book in object_list %}
+
+    <li>
+      <a href="{%url 'jejudaum:book_detail' pk=book.pk%}">{{ book.title }} ({{ book.name }}) {{book.content}}</a>
+      <div class="">
+        <ul>
+          <li><a href="{% url 'jejudaum:book_edit' pk=book.pk %}">Update</a></li>
+          <li><a href="{% url 'jejudaum:book_delete' pk=book.pk %}">Delete</a></li>
+        </ul>
+      </div>
+    </li>
+    {% endfor %}
+
+</ul>
+{% endblock %}

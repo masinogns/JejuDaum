@@ -1,0 +1,19 @@
+
+{% extends "index.html" %}
+
+{% load staticfiles %}
+
+
+{%block content%}
+
+<h1>제주대학교 정문 후문 원룸 리스트입니다.</h1>
+<h1>자세히 보기</h1>
+<h1>{{ book.title }}</h1>
+<h2> ({{ book.name }})</h2>
+<h3> {{book.content|linebreaksbr}}</h3>
+
+<a href="{% url 'jejudaum:book_list'%}">리스트로 가기</a>
+
+
+
+{%endblock content%}
